@@ -8,7 +8,7 @@ const CakeCard = (props) => {
                 <h2>{props.name}</h2>
             </div>
             <div>
-                <img src={props.image} />
+                <img src={props.image} alt={props.name} />
             </div>
         </div>
     )

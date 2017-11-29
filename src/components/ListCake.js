@@ -3,11 +3,22 @@ import './ListCake.css';
 import CakeCard from './CakeCard.js';
 
 const ListCake = (props) => {
-    return (
-        <div className="listCake">
-            <CakeCard name={props.name} image={props.image} />
-        </div>
-    )
+
+        const cakes = props.cakes;
+
+        return (
+            <div className="listCake">
+                <ul id="cakes">
+    
+                    {cakes
+                        .map((cake) => <CakeCard key={`${cake.imageUrl}-${Math.random()}`} name={cake.name} image={cake.imageUrl} /> )
+                    }
+    
+                </ul>
+            </div>
+        )
+    
+    
 }
 
 export default ListCake; 

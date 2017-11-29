@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import firebase from './config/firebase.js';
 import Header from './components/Header.js';
@@ -58,7 +57,7 @@ class App extends Component {
         
         <Header className="header" />
 
-        <ListCake name="My Cake" image="https://www.bbcgoodfood.com/sites/default/files/styles/category_retina/public/cherrycake_0.jpg?itok=IwvfZchz" />
+        <ListCake cakes={this.state.cakes} />
 
       </div>
     );
