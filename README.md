@@ -13,11 +13,11 @@ taken!
 Ok, as mentioned above there are no hard and fast rules, however the general format of what
 we’re looking for covers the various facets encountered when developing web apps in general.
 These broadly cover:  
-● Source control (git, svn etc)
-● Build and package tooling (grunt, gulp, package management etc)
-● Framework choices (none [vanilla js]? angularjs? reactjs? ember?)
-● Deployment (hybrid/native using cordova or a progressive web app etc)
-● Knowledge of an agile/iterative process.  
+- Source control (git, svn etc)
+- Build and package tooling (grunt, gulp, package management etc)
+- Framework choices (none [vanilla js]? angularjs? reactjs? ember?)
+- Deployment (hybrid/native using cordova or a progressive web app etc)
+- Knowledge of an agile/iterative process.  
 
 Technologies today, can enable simple scaffolding of applications in a few hours - usually forming
 seed projects to further enable quick start of other applications, taking these broad areas
@@ -34,25 +34,25 @@ If we were to put these into a simple agile format, then the stories would look 
 As a cake lover, I can view all cakes that have been submitted so I can drool at their awesome
 tastiness.
 #### Acceptance Criteria
-● A simple list showing the image and name of the cake and nothing else
+- A simple list showing the image and name of the cake and nothing else
 
 ### S2   
 As a cake lover, I can submit cakes that I like so everyone can drool at my tasty suggestions.
 
 #### Acceptance Criteria  
-● I should be able add a cake from the list of all cakes view
-● I should be taken to a view where I am able to specify the name a comment and a yum
+- I should be able add a cake from the list of all cakes view
+- I should be taken to a view where I am able to specify the name a comment and a yum
 factor between 1 and 5.
-● I should be returned back to the list of cakes after submitting.
+- I should be returned back to the list of cakes after submitting.
 
 ### S3  
 As a cake lover I can view details about a single cake so that I can see the comment made
 against it.
 
 #### Acceptance Criteria
-● I can select/click or tap any cake in the list and be taken to a view where I can see the
+- I can select/click or tap any cake in the list and be taken to a view where I can see the
 comment/review made.
-● I should be able to close or navigate back to the list of cakes once I’ve read the cake details.
+- I should be able to close or navigate back to the list of cakes once I’ve read the cake details.
 
 #### Technical aspects / constraints and goals
 An API endpoint to manage the cakes is available here:  
