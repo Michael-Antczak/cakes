@@ -55,15 +55,15 @@ comment/review made.
 ● I should be able to close or navigate back to the list of cakes once I’ve read the cake details.
 
 #### Technical aspects / constraints and goals
-An API endpoint to manage the cakes is available here:
-http://ec2-52-209-201-89.eu-west-1.compute.amazonaws.com:5000/api
-exposes the following operations:
+An API endpoint to manage the cakes is available here:  
+http://ec2-52-209-201-89.eu-west-1.compute.amazonaws.com:5000/api  
+exposes the following operations:  
 
-● GET /cakes
-● GET /cakes/{id}
-● POST /cakes
-● PUT /cakes/{id}
-● DELETE /cakes/{id}
+- GET /cakes
+- GET /cakes/{id}
+- POST /cakes
+- PUT /cakes/{id}
+- DELETE /cakes/{id}  
 
 A cake payload is in the form of:
 ```
