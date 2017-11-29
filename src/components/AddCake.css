@@ -1,0 +1,9 @@
+.addCake {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.errorMessages {
+    height: 20px;
+}

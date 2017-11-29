@@ -3,6 +3,7 @@ import './App.css';
 import firebase from './config/firebase.js';
 import Header from './components/Header.js';
 import ListCake from './components/ListCake.js';
+import AddCake from './components/AddCake.js';
 
 
 class App extends Component {
@@ -58,6 +59,8 @@ class App extends Component {
         
         <Header className="header" />
 
+        <AddCake />
+        
         <ListCake cakes={this.state.cakes} />
 
       </div>
