@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import firebase from './config/firebase.js';
-import Header from './components/Header.js'
+import Header from './components/Header.js';
+import ListCake from './components/ListCake.js';
+
 
 class App extends Component {
 
@@ -30,7 +32,7 @@ class App extends Component {
     
           // convert Firebase object into an Array and add to state
           const allCakes = snapshot.val();
-          console.log(allCakes);
+          // console.log(allCakes);
           let newState = [];
     
           for(let cake in allCakes) {
@@ -53,11 +55,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        
         <Header className="header" />
 
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <ListCake name="My Cake" image="https://www.bbcgoodfood.com/sites/default/files/styles/category_retina/public/cherrycake_0.jpg?itok=IwvfZchz" />
+
       </div>
     );
   }
