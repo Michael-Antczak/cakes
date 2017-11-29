@@ -1,0 +1,21 @@
+.headerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background-color: rgb(31, 31, 28);
+}
+
+h1 { 
+    font-size: 30px;
+}
+.bold, .thin {
+    color: white;
+}
+
+.bold {
+    font-weight: 900;
+}
+.thin {
+    font-weight: 100;
+}
