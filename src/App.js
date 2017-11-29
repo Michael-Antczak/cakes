@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import firebase from './config/firebase.js';
+import Header from './components/Header.js'
 
 class App extends Component {
 
@@ -39,12 +40,6 @@ class App extends Component {
               comment: allCakes[cake].comment,
               yumFactor: allCakes[cake].yumFactor,
             });
-            console.log(`
-              ${allCakes[cake].name}
-              ${allCakes[cake].imageUrl}
-              ${allCakes[cake].comment}
-              ${allCakes[cake].yumFactor}
-            `)
           }
      
           this.setState({
@@ -58,10 +53,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+        <Header className="header" />
+
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
