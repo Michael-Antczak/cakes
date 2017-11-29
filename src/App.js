@@ -36,6 +36,7 @@ class App extends Component {
     
           for(let cake in allCakes) {
             newState.push({
+              id: cake,
               name: allCakes[cake].name,
               imageUrl: allCakes[cake].imageUrl,
               comment: allCakes[cake].comment,

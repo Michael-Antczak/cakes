@@ -11,7 +11,7 @@ const ListCake = (props) => {
                 <ul id="cakes">
     
                     {cakes
-                        .map((cake) => <CakeCard key={`${cake.imageUrl}-${Math.random()}`} name={cake.name} image={cake.imageUrl} /> )
+                        .map((cake) => <CakeCard key={cake.id} name={cake.name} image={cake.imageUrl} /> )
                     }
     
                 </ul>
