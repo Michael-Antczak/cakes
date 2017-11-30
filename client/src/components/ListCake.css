@@ -2,6 +2,11 @@
     padding: 10px;
 }
 
+ul#cakes a {
+    text-decoration: none;
+    color: black;
+}
+
 #cakes {
     padding: 0;
 }

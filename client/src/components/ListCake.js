@@ -59,7 +59,7 @@ class ListCake extends React.Component {
                 <ul id="cakes">
     
                     {cakes
-                        .map((cake) => <CakeCard key={cake.id} name={cake.name} image={cake.imageUrl} /> )
+                        .map((cake) => <CakeCard key={cake.id} name={cake.name} image={cake.imageUrl} id={cake.id} comment={cake.comment} yumFactor={cake.yumFactor} /> )
                     }
     
                 </ul>
