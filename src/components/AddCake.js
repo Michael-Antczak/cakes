@@ -1,5 +1,6 @@
 import React from 'react';
 import './AddCake.css';
+import firebase from '../config/firebase.js';
 
 class AddCake extends React.Component {
 
@@ -15,6 +16,7 @@ class AddCake extends React.Component {
 
         this._onChange = this._onChange.bind(this);
         this._onChangeYumFactor = this._onChangeYumFactor.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     _onChange(e) {
@@ -57,63 +59,92 @@ class AddCake extends React.Component {
         setTimeout(() => {
             this.setState({
                 errors: '',
-                yumFactor: '',
             })
         }, 3000);
         
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+
+        // check if the name, image and yumFactor fields are populated
+        // if yes then add to firebase
+        if(
+            this.state.name && 
+            this.state.image && 
+            this.state.yumFactor
+        ) {
+            const database = firebase.database();
+            
+            database.ref('cakes/' + Date.now()).set({
+                name: this.state.name,
+                yumFactor: this.state.yumFactor,
+                comment: this.state.comment,
+                imageUrl: this.state.image, 
+            });
+
+            // clear state
+            this.setState({
+                name: '',
+                comment: '',
+                image: '', 
+                yumFactor: ''
+            })
+        } 
     }
 
     render() {
 
         return (
 
-            <div className="addCake">
-                <div>
-                    <label>Name: </label>
-                    <input 
-                        type="text" 
-                        name="name" 
-                        value={this.state.name} 
-                        onChange={this._onChange} 
-                        placeholder="Name of the cake..." 
-                    />
-                </div>
-                <div>
-                    <label>Comment: </label>
-                    <input 
-                        type="text" 
-                        name="comment" 
-                        value={this.state.comment} 
-                        onChange={this._onChange} 
-                        placeholder="Any comments..." 
-                    />
-                </div>
-                <div>
-                    <label>Image: </label>
-                    <input 
-                        type="text" 
-                        name="image" 
-                        value={this.state.image} 
-                        onChange={this._onChange} 
-                        placeholder="Link to image..." 
+            <form onSubmit={this.handleSubmit}>
+                <div className="addCake">
+                    <div>
+                        <label>Name: </label>
+                        <input 
+                            type="text" 
+                            name="name" 
+                            value={this.state.name} 
+                            onChange={this._onChange} 
+                            placeholder="Name of the cake..." 
                         />
+                    </div>
+                    <div>
+                        <label>Comment: </label>
+                        <input 
+                            type="text" 
+                            name="comment" 
+                            value={this.state.comment} 
+                            onChange={this._onChange} 
+                            placeholder="Any comments..." 
+                        />
+                    </div>
+                    <div>
+                        <label>Image: </label>
+                        <input 
+                            type="text" 
+                            name="image" 
+                            value={this.state.image} 
+                            onChange={this._onChange} 
+                            placeholder="Link to image..." 
+                            />
+                    </div>
+                    <div>
+                        <label>Yum Factor: </label>
+                        <input 
+                            type="text" 
+                            name="yumFactor" 
+                            value={this.state.yumFactor} 
+                            onChange={this._onChangeYumFactor} 
+                            placeholder="Yum Factor from 1 to 5..."
+                        />
+                    </div>
+                    <div className="errorMessages">{this.state.errors}</div>
+                    <div>
+                        <input type="submit" value="Add cake" />
+                    </div>
                 </div>
-                <div>
-                    <label>Yum Factor: </label>
-                    <input 
-                        type="text" 
-                        name="yumFactor" 
-                        value={this.state.yumFactor} 
-                        onChange={this._onChangeYumFactor} 
-                        placeholder="Yum Factor from 1 to 5..."
-                    />
-                </div>
-                <div className="errorMessages">{this.state.errors}</div>
-                <div>
-                    <button>Add cake</button>
-                </div>
-            </div>
-
+            </form>
         )
     }
 }
