@@ -1,0 +1,15 @@
+.cakeView {
+    padding: 10px;
+}
+
+.displayData {
+    margin-bottom: 5px;
+}
+
+.displayData.title {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
