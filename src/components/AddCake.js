@@ -1,6 +1,7 @@
 import React from 'react';
 import './AddCake.css';
 import firebase from '../config/firebase.js';
+import { Redirect } from "react-router-dom";
 
 class AddCake extends React.Component {
 
@@ -12,6 +13,7 @@ class AddCake extends React.Component {
             image: '',
             yumFactor: '',
             errors: '',
+            redirect: false,
         }
 
         this._onChange = this._onChange.bind(this);
@@ -88,8 +90,13 @@ class AddCake extends React.Component {
                 name: '',
                 comment: '',
                 image: '', 
-                yumFactor: ''
-            })
+                yumFactor: '',
+                redirect: true,
+            });
+
+            
+
+
         } else {
             this.setState({
                 errors: "Fill in the form please."
@@ -104,6 +111,10 @@ class AddCake extends React.Component {
     }
 
     render() {
+
+        if(this.state.redirect) {
+            return <Redirect to="/" />;
+        }
 
         return (
 

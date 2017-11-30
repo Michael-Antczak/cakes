@@ -1,9 +1,14 @@
 .headerContainer {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 80px;
     background-color: rgb(31, 31, 28);
+}
+
+.headerContainer a {
+    text-decoration: none;
+    margin: 0 20px;
 }
 
 h1 { 
