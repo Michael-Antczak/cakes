@@ -90,7 +90,17 @@ class AddCake extends React.Component {
                 image: '', 
                 yumFactor: ''
             })
-        } 
+        } else {
+            this.setState({
+                errors: "Fill in the form please."
+            });
+
+            setTimeout(() => {
+                this.setState({
+                    errors: '',
+                })
+            }, 2000);
+        }
     }
 
     render() {
@@ -99,7 +109,7 @@ class AddCake extends React.Component {
 
             <form onSubmit={this.handleSubmit}>
                 <div className="addCake">
-                    <div>
+                    <div className="inputSection">
                         <label>Name: </label>
                         <input 
                             type="text" 
@@ -109,7 +119,7 @@ class AddCake extends React.Component {
                             placeholder="Name of the cake..." 
                         />
                     </div>
-                    <div>
+                    <div className="inputSection">
                         <label>Comment: </label>
                         <input 
                             type="text" 
@@ -119,7 +129,7 @@ class AddCake extends React.Component {
                             placeholder="Any comments..." 
                         />
                     </div>
-                    <div>
+                    <div className="inputSection">
                         <label>Image: </label>
                         <input 
                             type="text" 
@@ -129,7 +139,7 @@ class AddCake extends React.Component {
                             placeholder="Link to image..." 
                             />
                     </div>
-                    <div>
+                    <div className="inputSection">
                         <label>Yum Factor: </label>
                         <input 
                             type="text" 
