@@ -4,6 +4,32 @@
     align-items: center;
 }
 
+.addCake div {
+    margin: 10px 0;
+    width: 90%;
+}
+
+input {
+    width: 90%;
+    padding: 7px;
+    font-size: 18px;
+    border: 0;
+    border-bottom: 1px solid grey;
+    outline: none;
+}
+
+input[type='submit'] {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 0;
+}
+
+input[type='submit']:hover {
+    background-color: white;
+    color: black;
+}
+
 .errorMessages {
     height: 20px;
 }
