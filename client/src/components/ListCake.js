@@ -9,7 +9,10 @@ class ListCake extends React.Component {
         super(props);
         this.state = {
           cakes: [], 
+          searchTerm: '',
         }
+
+        this.handleChange = this.handleChange.bind(this);
     }
 
     componentDidMount() {
@@ -50,21 +53,33 @@ class ListCake extends React.Component {
     
     }  // end of componentDidMount
 
+    handleChange(e) {
+        this.setState({
+            searchTerm: e.target.value,
+        })
+    }
+
     render() {
 
         const cakes = this.state.cakes;
 
         return (
-            <div className="listCake">
-                <ul id="cakes">
-    
-                    {cakes
-                        .map((cake) => <CakeCard key={cake.id} name={cake.name} image={cake.imageUrl} id={cake.id} comment={cake.comment} yumFactor={cake.yumFactor} /> )
-                    }
-    
-                </ul>
+            <div>
+                <div className="search">
+                    <input type="text" onChange={this.handleChange} placeholder="Search for cake..." value={this.state.searchTerm} />
+                </div>
+                <div className="listCake">
+                    <ul id="cakes">
+        
+                        {cakes
+                            .filter((cake) => cake.name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
+                            .map((cake) => <CakeCard key={cake.id} name={cake.name} image={cake.imageUrl} id={cake.id} comment={cake.comment} yumFactor={cake.yumFactor} /> )
+                        }
+        
+                    </ul>
+                </div>
             </div>
-        )
+        );
     }
 }
 

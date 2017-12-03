@@ -10,3 +10,16 @@ ul#cakes a {
 #cakes {
     padding: 0;
 }
+
+.search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.search input {
+    width: 50%;
+    text-align: center;
+}
